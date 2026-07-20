@@ -243,7 +243,7 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   }
   .host-name {
     text-align: center;
-    font-size: clamp(0.78rem, 2.8vw, 0.95rem);
+    font-size: clamp(1.78rem, 2.8vw, 0.95rem);
     line-height: 1.45;
   }
   .host-join {
