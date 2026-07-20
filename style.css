@@ -261,7 +261,7 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   .names { font-size: clamp(1.8rem, 11vw, 2.2rem); }
   .invite-opening, .invite-line { font-size: 1.05rem; }
   .hosts { gap: 4px; }
-  .host-name { font-size: 0.72rem; line-height: 1.4; }
+  .host-name { font-size: 1.72rem; line-height: 1.4; }
   .host-join { font-size: 0.78rem; }
 }
 
