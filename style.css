@@ -92,6 +92,10 @@ main { position: relative; z-index: 1; }
   padding: clamp(30px, 7vw, 70px) clamp(22px, 6vw, 65px);
   overflow: hidden;
 }
+.card > * {
+  position: relative;
+  z-index: 1;
+}
 .card::before, .card::after {
   content: "❦";
   position: absolute;
@@ -101,44 +105,63 @@ main { position: relative; z-index: 1; }
 .card::before { top: -25px; right: 10px; transform: rotate(25deg); }
 .card::after { bottom: -35px; left: 8px; transform: rotate(205deg); }
 .gold-line { width: 100px; height: 2px; margin: 0 auto 25px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-.basmala { font-family: "Aref Ruqaa", serif; font-size: 1.5rem; color: var(--primary); }
-blockquote { margin: 20px auto 28px; max-width: 680px; line-height: 2; color: var(--muted); }
+.basmala { font-family: "Aref Ruqaa", serif; font-size: clamp(1.2rem, 4vw, 1.5rem); color: var(--primary); }
+blockquote {
+  margin: 20px auto 28px;
+  max-width: 680px;
+  padding: 0 4px;
+  line-height: 1.9;
+  font-size: clamp(0.95rem, 3.2vw, 1.05rem);
+  color: var(--muted);
+}
 .invite-opening {
   margin: 0 0 28px;
   font-family: "Aref Ruqaa", serif;
-  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  font-size: clamp(1.15rem, 4vw, 1.85rem);
   color: var(--primary);
   line-height: 1.8;
 }
 .hosts {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: clamp(12px, 4vw, 28px);
-  flex-wrap: wrap;
+  gap: clamp(8px, 3vw, 28px);
   margin-bottom: 22px;
 }
 .host-name {
   font-family: "Aref Ruqaa", serif;
-  font-size: clamp(1.15rem, 3.5vw, 1.55rem);
+  font-size: clamp(0.95rem, 3.2vw, 1.55rem);
   color: var(--primary-dark);
-  line-height: 1.7;
-  max-width: 240px;
+  line-height: 1.6;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .host-join {
   color: var(--gold);
   font-family: "Aref Ruqaa", serif;
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-size: clamp(1rem, 3vw, 1.4rem);
   font-weight: 400;
+  flex-shrink: 0;
 }
 .invite-line {
   margin: 0 0 26px;
   font-family: "Aref Ruqaa", serif;
-  font-size: clamp(1.25rem, 3.8vw, 1.7rem);
+  font-size: clamp(1.05rem, 3.8vw, 1.7rem);
   color: var(--primary);
   line-height: 1.8;
 }
-.names { margin-top: 8px; display: flex; justify-content: center; align-items: center; gap: 20px; font-family: "Aref Ruqaa", serif; font-size: clamp(2.8rem, 10vw, 5.5rem); color: var(--primary-dark); line-height: 1.1; }
+.names {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(8px, 3vw, 20px);
+  font-family: "Aref Ruqaa", serif;
+  font-size: clamp(2.2rem, 9vw, 5.5rem);
+  color: var(--primary-dark);
+  line-height: 1.1;
+}
 .names b { color: var(--gold); font-size: .7em; }
 
 .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
@@ -199,12 +222,38 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
 @keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(480deg); opacity: 0; } }
 
 @media (max-width: 650px) {
+  .hero { padding: 32px 16px; }
+  .hero h1 { font-size: clamp(2.6rem, 14vw, 3.4rem); }
+  .open-card { width: 100%; max-width: 320px; justify-content: center; padding: 14px 18px; font-size: 0.95rem; }
+  .invitation { width: calc(100% - 20px); padding: 20px 0 60px; }
+  .card { border-radius: 22px; padding: 28px 16px; }
+  .card::before, .card::after { font-size: 4.5rem; opacity: 0.5; }
+  .card::before { top: -15px; right: 4px; }
+  .card::after { bottom: -20px; left: 4px; }
   .details-grid { grid-template-columns: 1fr; }
   .countdown { gap: 7px; }
   .countdown div { padding: 13px 4px; }
-  .names { gap: 12px; }
-  .hosts { gap: 10px; }
-  .host-name { max-width: 100%; }
+  .countdown strong { font-size: clamp(1.4rem, 6vw, 1.7rem); }
+  .countdown span { font-size: 0.75rem; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .primary-btn, .secondary-btn { width: 100%; text-align: center; }
+  .hosts {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 6px;
+  }
+  .host-name { text-align: center; max-width: 100%; }
+  .host-join { margin: 2px 0; }
+  .names { gap: 10px; font-size: clamp(2rem, 12vw, 2.8rem); }
+  .note, .countdown-section, .actions, .detail-card { padding: 22px 16px; }
+  .children-note { font-size: 0.9rem; padding: 8px 12px; }
+  .music-btn { left: 12px; bottom: 12px; width: 44px; height: 44px; }
+}
+
+@media (max-width: 380px) {
+  .names { font-size: clamp(1.8rem, 11vw, 2.2rem); }
+  .invite-opening, .invite-line { font-size: 1.05rem; }
+  .host-name { font-size: 0.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
