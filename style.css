@@ -238,12 +238,19 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   .actions { flex-direction: column; align-items: stretch; }
   .primary-btn, .secondary-btn { width: 100%; text-align: center; }
   .hosts {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     gap: 6px;
   }
-  .host-name { text-align: center; max-width: 100%; }
-  .host-join { margin: 2px 0; }
+  .host-name {
+    text-align: center;
+    font-size: clamp(0.78rem, 2.8vw, 0.95rem);
+    line-height: 1.45;
+  }
+  .host-join {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0 2px;
+  }
   .names { gap: 10px; font-size: clamp(2rem, 12vw, 2.8rem); }
   .note, .countdown-section, .actions, .detail-card { padding: 22px 16px; }
   .children-note { font-size: 0.9rem; padding: 8px 12px; }
@@ -253,7 +260,9 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
 @media (max-width: 380px) {
   .names { font-size: clamp(1.8rem, 11vw, 2.2rem); }
   .invite-opening, .invite-line { font-size: 1.05rem; }
-  .host-name { font-size: 0.9rem; }
+  .hosts { gap: 4px; }
+  .host-name { font-size: 0.72rem; line-height: 1.4; }
+  .host-join { font-size: 0.78rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
