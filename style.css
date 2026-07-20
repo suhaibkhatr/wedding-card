@@ -102,9 +102,43 @@ main { position: relative; z-index: 1; }
 .card::after { bottom: -35px; left: 8px; transform: rotate(205deg); }
 .gold-line { width: 100px; height: 2px; margin: 0 auto 25px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 .basmala { font-family: "Aref Ruqaa", serif; font-size: 1.5rem; color: var(--primary); }
-blockquote { margin: 20px auto; max-width: 680px; line-height: 2; color: var(--muted); }
-.family-line { margin-top: 28px; }
-.names { margin-top: 18px; display: flex; justify-content: center; align-items: center; gap: 20px; font-family: "Aref Ruqaa", serif; font-size: clamp(2.4rem, 8vw, 4.8rem); color: var(--primary-dark); }
+blockquote { margin: 20px auto 28px; max-width: 680px; line-height: 2; color: var(--muted); }
+.invite-opening {
+  margin: 0 0 28px;
+  font-family: "Aref Ruqaa", serif;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  color: var(--primary);
+  line-height: 1.8;
+}
+.hosts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 4vw, 28px);
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.host-name {
+  font-family: "Aref Ruqaa", serif;
+  font-size: clamp(1.15rem, 3.5vw, 1.55rem);
+  color: var(--primary-dark);
+  line-height: 1.7;
+  max-width: 240px;
+}
+.host-join {
+  color: var(--gold);
+  font-family: "Aref Ruqaa", serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+}
+.invite-line {
+  margin: 0 0 26px;
+  font-family: "Aref Ruqaa", serif;
+  font-size: clamp(1.25rem, 3.8vw, 1.7rem);
+  color: var(--primary);
+  line-height: 1.8;
+}
+.names { margin-top: 8px; display: flex; justify-content: center; align-items: center; gap: 20px; font-family: "Aref Ruqaa", serif; font-size: clamp(2.8rem, 10vw, 5.5rem); color: var(--primary-dark); line-height: 1.1; }
 .names b { color: var(--gold); font-size: .7em; }
 
 .details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
@@ -169,6 +203,8 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   .countdown { gap: 7px; }
   .countdown div { padding: 13px 4px; }
   .names { gap: 12px; }
+  .hosts { gap: 10px; }
+  .host-name { max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
