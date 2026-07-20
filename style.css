@@ -248,7 +248,7 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   }
   .host-join {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 2.85rem;
     padding: 0 2px;
   }
   .names { gap: 10px; font-size: clamp(2rem, 12vw, 2.8rem); }
@@ -262,7 +262,7 @@ footer { text-align: center; padding: 38px 10px 0; color: var(--muted); }
   .invite-opening, .invite-line { font-size: 1.05rem; }
   .hosts { gap: 4px; }
   .host-name { font-size: 1.72rem; line-height: 1.4; }
-  .host-join { font-size: 0.78rem; }
+  .host-join { font-size: 1.78rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
